@@ -1,0 +1,10 @@
+<mat-sidenav-container class="app-nav">
+  <mat-sidenav mode="side" opened class="wrapper">
+    <a routerLink="schedule" routerLinkActive="active">Home</a>
+    <a routerLink="meals" routerLinkActive="active">About</a>
+    <a routerLink="workouts" routerLinkActive="active">Contact</a>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

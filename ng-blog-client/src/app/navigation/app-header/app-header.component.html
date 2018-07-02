@@ -1,0 +1,9 @@
+<div class="toolbar-wrapper">
+  <mat-toolbar class="toolbar">
+    <img src="../../../assets/images/logo.svg" alt="" class="logo">
+    <span class="fill-remaining-space"></span>
+    <a class="auth-link" [routerLink]="['auth', { outlets: { auth: ['login'] } }]">Sign In</a>
+  </mat-toolbar>
+</div>
+
+<router-outlet name="auth"></router-outlet>
