@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
+
+import { AuthModalComponent } from '../../auth/auth-modal/auth-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  openDialog() {
+    this.router.navigate([{ outlets: { auth: ['login'] } }])
+      .then(() => {
+        const dialogRef = this.dialog.open(AuthModalComponent, {height: '350px'});
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          this.router.navigate([{ outlets: { auth: null } }]);
+        });
+    });
   }
 
 }
