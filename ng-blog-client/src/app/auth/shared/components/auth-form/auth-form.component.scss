@@ -2,13 +2,34 @@
   button {
     margin: 10px 0;
     width: 100%;
+    background-color: #da4a53;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    min-height: 60px;
   }
 }
 
 .auth-form {
-  height: 250px;
   .form-field {
     width: 100%;
   }
+  .toggle {
+    text-align: center;
+    margin-bottom: 10px;
+    a {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 10px;
+      color: #422e3e;
+      padding-bottom: 2px;
+      outline: none;
+      &.active-link {
+        border-bottom: 4px solid #da4a53;
+      }
+    }
+  }
+
 }
 

@@ -8,8 +8,6 @@ import { AuthService } from '../shared/services/auth/auth.service';
   selector: 'register',
   template: `
     <auth-form (submitted)="registerUser($event)">
-      <h1>Register</h1>
-      <a [routerLink]="['', { outlets: { auth: ['login'] } }]">Already have an account?</a>
       <button mat-raised-button>Create account</button>
       <div class="error" *ngIf="error">
         {{ error }}

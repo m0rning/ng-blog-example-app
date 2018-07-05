@@ -6,11 +6,10 @@ import { AuthService } from '../shared/services/auth/auth.service';
 
 @Component({
   selector: 'login',
+  styleUrls: ['login.component.scss'],
   template: `
     <auth-form (submitted)="loginUser($event)">
-      <h1>Login</h1>
-      <a [routerLink]="['', { outlets: { auth: ['register'] } }]">Not registered?</a>
-      <button mat-raised-button>Login</button>
+      <button mat-raised-button class="login-button">Login</button>
       <div class="error" *ngIf="error">
         {{ error }}
       </div>

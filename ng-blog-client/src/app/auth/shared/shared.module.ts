@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { AuthService } from './services/auth/auth.service';
@@ -11,7 +12,8 @@ import { AuthService } from './services/auth/auth.service';
     CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule
   ],
   declarations: [
     AuthFormComponent

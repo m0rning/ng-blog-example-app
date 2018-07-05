@@ -20,7 +20,11 @@ export class AppHeaderComponent implements OnInit {
   openDialog() {
     this.router.navigate([{ outlets: { auth: ['login'] } }])
       .then(() => {
-        const dialogRef = this.dialog.open(AuthModalComponent, {height: '350px'});
+        const dialogRef = this.dialog.open(AuthModalComponent, {
+          minHeight: 350,
+          // hasBackdrop: false,
+          panelClass: 'auth-modal'
+        });
         dialogRef.afterClosed().subscribe(result => {
           console.log('The dialog was closed');
           this.router.navigate([{ outlets: { auth: null } }]);
