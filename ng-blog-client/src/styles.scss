@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~material-design-icons/iconfont/material-icons.css';
-@import 'app/auth/auth-modal/auth-modal.component';
+@import 'app/auth/auth-modal/auth-modal.component.scss';
+@import 'app/shared/ui/styles.scss';
 
 html, body {
   width: 100%;
@@ -11,6 +12,7 @@ html, body {
   padding: 0;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
+  color: $default-text-color;
   &:active {
     text-decoration: none;
   }

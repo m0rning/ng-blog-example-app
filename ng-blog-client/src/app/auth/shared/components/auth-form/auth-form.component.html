@@ -4,6 +4,10 @@
       <a [routerLink]="['', { outlets: { auth: ['login'] } }]" routerLinkActive="active-link">Sign In</a>
       <a [routerLink]="['', { outlets: { auth: ['register'] } }]" routerLinkActive="active-link">Sign Up</a>
     </div>
+    <div class="image-wrapper">
+      <ng-content select="img"></ng-content>
+    </div>
+    <ng-content select="p"></ng-content>
     <mat-form-field class="form-field" appearance="outline">
       <input matInput type="email" placeholder="Email address" formControlName="email">
       <mat-error *ngIf="emailFormat">Invalid email format</mat-error>

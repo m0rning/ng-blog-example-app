@@ -6,10 +6,11 @@ import { AuthService } from '../shared/services/auth/auth.service';
 
 @Component({
   selector: 'login',
-  styleUrls: ['login.component.scss'],
   template: `
     <auth-form (submitted)="loginUser($event)">
       <button mat-raised-button class="login-button">Login</button>
+      <img src="../../../assets/images/signin.svg" alt="">
+      <p>WELCOME BACK</p>
       <div class="error" *ngIf="error">
         {{ error }}
       </div>

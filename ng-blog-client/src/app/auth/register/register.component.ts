@@ -9,6 +9,8 @@ import { AuthService } from '../shared/services/auth/auth.service';
   template: `
     <auth-form (submitted)="registerUser($event)">
       <button mat-raised-button>Create account</button>
+      <img src="../../../assets/images/signup.svg" alt="">
+      <p>DON'T MISS OUT OUR UPCOMING POSTS</p>
       <div class="error" *ngIf="error">
         {{ error }}
       </div>
