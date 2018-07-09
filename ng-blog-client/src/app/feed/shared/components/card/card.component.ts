@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
 import {Input} from '@angular/core';
+import {Post} from '../../models/post';
 
 @Component({
   selector: 'app-card',
+  styleUrls: ['card.component.scss'],
   template:  `
-    <mat-card>
+    <mat-card class="card">
       <mat-card-header>
-        <mat-card-title>{{post.title}}</mat-card-title>
-        <mat-card-subtitle>{{post.subtitle}}</mat-card-subtitle>
+        <mat-card-title class="post-title">{{post.title}}</mat-card-title>
+        <mat-card-subtitle class="written-by">Written by <span>{{post.author}}</span></mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="post.image" alt="">
+      <img mat-card-image class="post-image" [src]="post.image" alt="">
       <mat-card-content>
-        <p>
-          {{post.content}}
+        <p class="post-description">
+          {{post.description}}
         </p>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions class="post-action">
         <ng-content select="button"></ng-content>
       </mat-card-actions>
     </mat-card>
   `
 })
 export class CardComponent {
-  @Input() post;
+  @Input() post: Post;
 }

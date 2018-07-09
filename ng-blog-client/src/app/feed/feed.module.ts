@@ -8,20 +8,21 @@ import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import {PostResolver} from './shared/resolvers/post.resolver';
 import {PostsResolver} from './shared/resolvers/posts.resolver';
+import {MatIconModule} from '@angular/material';
 
 export const ROUTES: Routes = [
   {
     path: '',
-    // resolve: {
-    //   posts: PostsResolver
-    // },
+    resolve: {
+      posts: PostsResolver
+    },
     component: PostsComponent
   },
   {
     path: ':id',
-    // resolve: {
-    //   post: PostResolver
-    // },
+    resolve: {
+      post: PostResolver
+    },
     component: PostComponent
   }
 ];
@@ -34,6 +35,7 @@ export const ROUTES: Routes = [
   imports: [
     CommonModule,
     MatButtonModule,
+    MatIconModule,
     RouterModule.forChild(ROUTES),
     SharedModule.forRoot()
   ]

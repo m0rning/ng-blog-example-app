@@ -10,7 +10,9 @@ import {Post} from '../shared/models/post';
     <div class="feed-wrapper">
       <div class="card" *ngFor="let post of posts">
         <app-card [post]="post">
-          <button mat-button [routerLink]="[post.id]">READ MORE</button>
+          <button mat-stroked-button [routerLink]="[post._id]" class="card-button">
+            READ MORE
+          </button>
         </app-card>
       </div>
     </div>

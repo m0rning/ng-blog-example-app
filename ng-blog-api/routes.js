@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = (app) => {
-    app.use('/api', require('./api/post'));
+    app.use('/api/posts', require('./api/post'));
 };

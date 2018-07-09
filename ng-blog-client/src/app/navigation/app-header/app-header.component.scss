@@ -8,6 +8,8 @@
       height: auto;
       width: 145px;
       margin-left: $navbar-width;
+      cursor: pointer;
+      outline: none;
     }
     .fill-remaining-space {
       flex: 1 1 auto;
