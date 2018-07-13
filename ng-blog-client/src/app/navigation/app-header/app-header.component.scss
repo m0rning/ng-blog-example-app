@@ -24,8 +24,8 @@
       border-bottom: 3px solid transparent;
       &:hover,
       &.active {
-        color: #da4a53;
-        border-bottom-color: #da4a53;
+        color: $accent-color;
+        border-bottom-color: $accent-color;
       }
     }
   }

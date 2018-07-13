@@ -4,7 +4,7 @@
   button {
     margin: 10px 0;
     width: 100%;
-    background-color: #da4a53;
+    background-color: $accent-color;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -38,7 +38,7 @@
       padding-bottom: 2px;
       outline: none;
       &.active-link {
-        border-bottom: 4px solid #da4a53;
+        border-bottom: 4px solid $accent-color;
       }
     }
   }
