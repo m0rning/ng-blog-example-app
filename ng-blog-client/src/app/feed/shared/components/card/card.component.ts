@@ -11,7 +11,7 @@ import { Post } from '../../models/post';
         <mat-card-title class="post-title">{{post.title}}</mat-card-title>
         <mat-card-subtitle class="written-by">Written by <span>{{post.author}}</span></mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image class="post-image" [src]="post.image" alt="">
+      <img mat-card-image [src]="post.image" alt="">
       <mat-card-content>
         <p class="post-description">
           {{post.description}}

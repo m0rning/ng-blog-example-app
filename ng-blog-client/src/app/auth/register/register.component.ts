@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 
 import { AuthService } from '../shared/services/auth/auth.service';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'register',
@@ -21,12 +21,12 @@ export class RegisterComponent {
   error: string;
 
   constructor(private authService: AuthService,
-              private router: Router) {}
+              private dialog: MatDialog) {}
 
   registerUser(event: FormGroup) {
     const { email, password } = event.value;
     this.authService.createUser(email, password).subscribe(
-      () => this.router.navigate(['/']),
+      () => this.dialog.closeAll(),
       (err) => this.error = err.message
     );
   }

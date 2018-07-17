@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import {MatDialog} from '@angular/material';
 
 import { AuthService } from '../shared/services/auth/auth.service';
 
@@ -21,12 +21,12 @@ export class LoginComponent {
   error: string;
 
   constructor(private authService: AuthService,
-              private router: Router) {}
+              private dialog: MatDialog) {}
 
   loginUser(event: FormGroup) {
     const { email, password } = event.value;
     this.authService.loginUser(email, password).subscribe(
-      () => this.router.navigate(['/']),
+      () => this.dialog.closeAll(),
       (err) => this.error = err.message
     );
   }
