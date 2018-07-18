@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {Post} from '../shared/models/post';
+import {PostService} from '../shared/services/post.service';
+import {switchMap} from 'rxjs/internal/operators';
+import {Observable} from 'rxjs/index';
 
 @Component({
   selector: 'app-post',
   styleUrls: ['post.component.scss'],
   template:  `
-    <div class="post">
+    <div class="post" *ngIf="post$ | async as post">
       <h1 class="post-title">{{post.title}}</h1>
       <p class="written-by">Written by: {{post.author}}</p>
       <img [src]="post.image" alt="" class="post-image">
@@ -16,11 +19,14 @@ import {Post} from '../shared/models/post';
   `
 })
 export class PostComponent implements OnInit {
-  post: Post;
+  post$: Observable<Post>;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private postService: PostService) {}
 
   ngOnInit(): void {
-    this.post = this.route.snapshot.data.post;
+    this.post$ = this.route.params.pipe(
+      switchMap(param => this.postService.getPost(param.id))
+    );
   }
 }

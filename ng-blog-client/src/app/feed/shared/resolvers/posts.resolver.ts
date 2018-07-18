@@ -8,14 +8,14 @@ import {Post} from '../models/post';
 import {PostService} from '../services/post.service';
 
 @Injectable()
-export class PostsResolver implements Resolve<Array<Post>> {
+export class PostsResolver implements Resolve<void> {
 
   constructor(private postsService: PostService) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<Array<Post>> {
+  ): Observable<void> {
     return this.postsService.getAllPosts();
   }
 }

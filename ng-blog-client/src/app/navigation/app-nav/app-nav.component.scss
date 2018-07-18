@@ -33,3 +33,10 @@
     background-color: #fbfbfb;
   }
 }
+
+.create-post {
+  position: fixed;
+  background-color: $accent-color;
+  right: 50px;
+  bottom: 50px;
+}

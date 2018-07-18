@@ -7,7 +7,6 @@ import {MatCardModule} from '@angular/material';
 import {CardComponent} from './components/card/card.component';
 import {PostService} from './services/post.service';
 import {PostsResolver} from './resolvers/posts.resolver';
-import {PostResolver} from './resolvers/post.resolver';
 
 @NgModule({
   imports: [
@@ -29,8 +28,7 @@ export class SharedModule {
       ngModule: SharedModule,
       providers: [
         PostService,
-        PostsResolver,
-        PostResolver
+        PostsResolver
       ]
     };
   }
