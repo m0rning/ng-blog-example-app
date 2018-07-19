@@ -14,11 +14,16 @@ export const ROUTES: Routes = [
     resolve: {
       posts: PostsResolver
     },
-    component: PostsComponent
-  },
-  {
-    path: ':id',
-    component: PostComponent
+    children: [
+      {
+        path: '',
+        component: PostsComponent,
+      },
+      {
+        path: ':id',
+        component: PostComponent
+      }
+    ]
   }
 ];
 
