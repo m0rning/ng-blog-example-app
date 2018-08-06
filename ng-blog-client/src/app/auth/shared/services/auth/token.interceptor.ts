@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse } from '@angular/common/http';
 
 import {Observable} from 'rxjs/index';
 
 import { AuthService } from './auth.service';
+import { tap } from 'rxjs/internal/operators';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -15,6 +16,13 @@ export class TokenInterceptor implements HttpInterceptor {
         Authorization: `Bearer ${this.auth.getToken()}`
       }
     });
-    return next.handle(request);
+    return next.handle(request).pipe(
+      tap((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) {
+          const token = event.headers.get('Token');
+          this.auth.setToken(token);
+        }
+      })
+    );
   }
 }
